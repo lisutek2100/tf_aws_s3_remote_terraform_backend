@@ -14,8 +14,8 @@ resource "aws_dynamodb_table" "lock_table" {
   }
 
   tags = {
-    Name    = "Terraform Backend Lock ${var.backend_name}"
-    UseCase = "Terraform Backend Lock"
+    Name    = "Terraform Remote Backend Lock ${var.backend_name}"
+    UseCase = "Terraform Remote Backend Lock"
   }
 
   lifecycle {
@@ -26,7 +26,7 @@ resource "aws_dynamodb_table" "lock_table" {
 resource "aws_budgets_budget" "dynamodb_lock_table" {
   name              = "${var.backend_name}-dynamodb-locktable-budget"
   budget_type       = "COST"
-  limit_amount      = "45.0"
+  limit_amount      = "25.0"
   limit_unit        = "USD"
   time_unit         = "MONTHLY"
   time_period_start = "2022-02-02_18:00"

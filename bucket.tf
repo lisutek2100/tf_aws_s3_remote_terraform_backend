@@ -7,8 +7,8 @@ resource "aws_s3_bucket" "bucket" {
   }
 
   tags = {
-    Name    = "Terraform Backend State ${var.backend_name}"
-    UseCase = "Terraform Backend State"
+    Name    = "Terraform Remote Backend State ${var.backend_name}"
+    UseCase = "Terraform Remote Backend State"
   }
 }
 
