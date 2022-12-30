@@ -1,4 +1,4 @@
-zvariable "backend_name" {
+variable "backend_name" {
   type        = string
   description = "Name of the Terraform backend."
 }
